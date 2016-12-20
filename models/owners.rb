@@ -22,10 +22,10 @@ class Owner
     return owners.map{ |owner| Owner.new(owner)}
   end  
   
-  def find_by_id(id)
+  def self.find(id)
     sql = "SELECT * FROM owners WHERE id = #{id}"
     results = SqlRunner.run( sql )
-    return Pet.new( results.first )
+    return Owner.new( results.first )
   end
 
   def self.update(options)
@@ -43,5 +43,13 @@ class Owner
     sql = "DELETE FROM owners where id=#{id}"
     SqlRunner.run(sql) 
   end   
-
+  
+  def pets()
+    sql ="SELECT owners, pets FROM pets 
+    INNER join adoptions
+    ON adoptions.pet_id = pets.id
+    WHERE adoptions.owner_id = #{@id}" 
+    pets = SqlRunner.run(sql)
+    return pets.map{|pet| Pet.new(pet)}
+  end
 end  

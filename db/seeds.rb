@@ -3,6 +3,9 @@ require_relative('../models/owners.rb')
 require_relative('../models/adoption.rb')
 require('pry')
 
+
+
+
 pet1 = Pet.new({'name' => 'Tambor', 'breed' => 'koala', 'date' => '11/11/16', 'adoptable' => 'yes'})
 pet1.save()
 

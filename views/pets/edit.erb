@@ -1,0 +1,32 @@
+<h1>Edit Pet</h1>
+
+<form action="/pets/<%= @pet.id%>" method="post">
+  <p>
+    <label>
+      Name:
+    </label>
+    <input type="text" name="name" value = "<%= @pet.name %>"/>
+  </p>
+  <p>
+    <label>
+      Breed:
+    </label>
+    <input type="text" name="breed" value="<%= @pet.breed %>"/>
+  </p>
+    
+    <label>
+      Admission Date:
+    </label>
+    <input type="text" name="date" value="<%= @pet.date %>"/>
+    </p>
+  <p>
+    <label>
+      Adoptable:
+    </label>
+    <input type="text" name="adoptable" value="<%= @pet.adoptable %>"/>
+  </p>
+     
+    </p>
+    <input type="submit" value="Update" />
+  </p>
+</form>

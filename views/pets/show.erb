@@ -1,0 +1,13 @@
+<h1>Pet Info</h1>
+
+Name: <%= @pet.name %><br>
+Breed: <%= @pet.breed %><br>
+admission Date: <%= @pet.date %><br>
+Adoptable: <%= @pet.adoptable %><br>
+<br>
+<a href="/pets/<%= @pet.id %>/edit">Edit</a><br> 
+<form action="/pets/<%= @pet.id %>/delete" method="post" >   
+<input type="submit" value="Delete">
+</form>
+<br>
+<a href="/pets">Back to All Pets</a>

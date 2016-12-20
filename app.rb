@@ -1,19 +1,18 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-# require_relative( './models/adoption.rb' )
-require_relative( './models/pets.rb' )
-require_relative( './models/owners.rb' )
+require_relative( 'controllers/adoptions_controller.rb' )
+require_relative( 'controllers/owners_controller.rb' )
+require_relative( 'controllers/pet_controller.rb' )
 
 
 
 get '/' do
-  erb(:welcome)
+  erb(:index)
 end
 
-# get '/pets' do
-#   @pets = Pet.all()
-#   erb(:)
-# end
+
+
+
 
 
 # get '/adoption' do

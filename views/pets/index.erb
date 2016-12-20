@@ -1,0 +1,34 @@
+<h1>Pets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Breed</th>
+    <th></th>
+    <th>Admission Date</th>
+    <th></th>
+    <th>Adoptable</th>
+  </tr>
+  <% for pet in @pets do %>
+  <tr>
+    <td><a href = "/pets/<%=pet.id%>"><%= pet.name %>
+    </a></td>
+    <td>|</td>
+    <td><%= pet.breed %></td>
+    <td>|</td>
+    <td><%= pet.date %></td>
+    <td>|</td>
+    <td><%= pet.adoptable %></td>
+    </td>
+  </tr>
+  
+
+  <% end %>
+</table>
+
+<nav>
+  <ul>
+    <li><a href="/pets/new">Add Pet</a></li>
+  </ul>
+</nav>

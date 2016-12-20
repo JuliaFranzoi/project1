@@ -1,0 +1,22 @@
+<h1>Adoptions</h1>
+
+<table>
+  <tr>
+    <th>Adoption</th>
+  </tr>
+  <% for adoption in @adoptions do %>
+  <tr>
+    <td><a href = "/pets/<%=adoption.pet.id%>"><%= adoption.pet.name %>
+    </a></td>
+    <td><a href = "/owners/<%=adoption.owner.id%>"><%= adoption.owner.name %>
+    </a></td>
+    <td>|</td>
+  </tr>
+  <% end %>
+</table>
+
+<nav>
+  <ul>
+    <li><a href="/adoptions/new">Adopt</a></li>
+  </ul>
+</nav>

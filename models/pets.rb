@@ -10,6 +10,7 @@ class Pet
     @breed = options['breed']
     @date = options['date'].to_s
     @adoptable = options['adoptable']
+    @owner = []
   end
   
   def save()
@@ -24,14 +25,14 @@ class Pet
     return results.map { |pet| Pet.new( pet )}
   end
 
-  def find_by_id(id)
+  def self.find(id)
     sql = "SELECT * FROM pets WHERE id = #{id}"
     results = SqlRunner.run( sql )
     return Pet.new( results.first )
   end
 
   def self.update(options)
-    sql = "UPDATE pets SET name='#{options['name']}', 'breed=#{options['breed']}', date='#{options['date']}', adoptable='#{options['adoptable']}' WHERE id='#{options['id']}'"
+    sql = "UPDATE pets SET name='#{options['name']}', breed='#{options['breed']}', date='#{options['date']}', adoptable='#{options['adoptable']}' WHERE id='#{options['id']}'"
     SqlRunner.run(sql)
   end
   
@@ -42,9 +43,15 @@ class Pet
 
 
   def self.destroy(id)
-    sql = "DELETE FROM pets where id=#{id}"
+    sql = "DELETE FROM pets where id = #{id}"
     SqlRunner.run(sql) 
   end   
+  
+  def owner()
+    sql = "SELECT *FROM owners WHERE id = #{@owners}"
+    owner = SqlRunner.run(sql)[0]
+    return Owner.new(owner)
+  end
 
 
 end  

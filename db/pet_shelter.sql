@@ -18,10 +18,11 @@ CREATE TABLE owners
   name VARCHAR(255)
 );
 
-CREATE TABLE adoption
+CREATE TABLE adoptions
 (
   id SERIAL4 primary key,
-  pet_id iNT4 references pets(id),
-  owner_id iNT4 references owners(id)
+  pet_id iNT4 references pets(id) ON DELETE CASCADE,
+  owner_id iNT4 references owners(id) ON DELETE CASCADE,
+  review TEXT
 );
  
