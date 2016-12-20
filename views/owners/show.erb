@@ -1,7 +1,9 @@
 <h1>Owner Info</h1>
 
 Name: <%= @owner.name %><br>
-
+Pets:<% for pet in @owner.pets %>
+        <td><%= pet.name() %></td>
+      <% end %>
 <br>
 <a href="/owners/<%= @owner.id %>/edit">Edit</a><br> 
 <form action="/owners/<%= @owner.id %>/delete" method="post" >   

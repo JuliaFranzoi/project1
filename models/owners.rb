@@ -45,7 +45,7 @@ class Owner
   end   
   
   def pets()
-    sql ="SELECT owners, pets FROM pets 
+    sql ="SELECT pets.* FROM pets 
     INNER join adoptions
     ON adoptions.pet_id = pets.id
     WHERE adoptions.owner_id = #{@id}" 

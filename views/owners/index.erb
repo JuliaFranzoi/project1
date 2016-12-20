@@ -3,14 +3,16 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
+    <th>Pets</th>
   </tr>
   <% for owner in @owners %>
-  <tr>
-    <td><a href = "/owners/<%=owner.id%>"><%= owner.name %>
-    </a></td>
-    <td>|</td>
-  </tr>
+    <tr>
+      <td><a href = "/owners/<%=owner.id%>"><%= owner.name %>
+      </a></td>
+      <% for pet in owner.pets %>
+        <td><%= pet.name() %></td>
+      <% end %>
+    </tr>
   <% end %>
 </table>
 

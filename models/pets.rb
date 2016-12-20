@@ -10,7 +10,7 @@ class Pet
     @breed = options['breed']
     @date = options['date'].to_s
     @adoptable = options['adoptable']
-    @owner = []
+
   end
   
   def save()
