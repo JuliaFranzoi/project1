@@ -5,7 +5,12 @@ Pets:<% for pet in @owner.pets %>
         <td><%= pet.name() %></td>
       <% end %>
 <br>
-<a href="/owners/<%= @owner.id %>/edit">Edit</a><br> 
+<form action="/owners/<%= @owner.id %>/edit" method="post" >
+<br>   
+<input type="submit" value="Edit">
+</form>
+<br>
+<!-- <a href="/owners/<%= @owner.id %>/edit">Edit</a><br> --> 
 <form action="/owners/<%= @owner.id %>/delete" method="post" >   
 <input type="submit" value="Delete">
 </form>

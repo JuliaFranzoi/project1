@@ -52,6 +52,10 @@ class Pet
     owner = SqlRunner.run(sql)[0]
     return Owner.new(owner)
   end
-
+ 
+ def isavailable()
+  available = []
+  adopted = []
+  if 
 
 end  
