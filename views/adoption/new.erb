@@ -4,7 +4,7 @@
   <p>
   Select Owner:
   </p>
-    </label>
+    <label>
       <select name="owner_id">
         <% for owner in @owners %>
           <option value= "<%=owner.id %>"><%=owner.name%><option>
@@ -17,10 +17,10 @@
   <p>
   Select Pet:
   </p>
-    </label>
+    <label>
       <select name="pet_id">
         <% for pet in @pets %>
-          <option value= "<%=pet.id %>"><%=pet.name%><option>
+          <option value= "<%=pet.id %>"><%=pet.name%>
         <%end%>
       </select>
     </label>

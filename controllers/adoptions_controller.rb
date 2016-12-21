@@ -9,7 +9,7 @@ get '/adoptions' do
 end
 
 get '/adoptions/new' do
-  @pets = Pet.all
+  @pets = Pet.all.select { |pet| pet.is_adoptable? }
   @owners = Owner.all
   erb(:"adoption/new")
 end

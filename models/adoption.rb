@@ -51,5 +51,8 @@ class Adoption
     sql = "DELETE FROM adoptions where id = #{id}"
     SqlRunner.run( sql )
   end
+ 
+  
+  
 
 end

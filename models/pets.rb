@@ -53,9 +53,36 @@ class Pet
     return Owner.new(owner)
   end
  
- def isavailable()
-  available = []
-  adopted = []
-  if 
+   
+  def self.is_available(id)
+   sql = "SELECT * FROM pets WHERE id = #{id}"
+   pet = SqlRunner.run(sql).first
+   pet_available = (pet["adoptable"] == "yes")
+   return screening(pet_available)
+  end 
 
-end  
+
+  # def is_available(id)
+  #   available = []
+  #   n_available = []
+  #    sql = "SELECT pets.adoptable FROM pets WHERE id = #{id}"
+  #    pet_adoptable = SqlRunner.run(sql)[0]
+  #    if pet_adoptable['adoptable'] == "yes"
+  #     available.push(Pet.new(pet_adoptable))
+  #    else
+  #     n_available.push(Pet.new(pet_adoptable))
+  #    end
+
+  def is_adoptable?
+    return adoptable == 'yes'
+  end
+
+  def adopt(pet_id)
+    if pet.id.is_available == "yes"
+      return 
+    end
+
+  end
+
+
+end
